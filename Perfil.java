@@ -3,17 +3,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
-public class Usuario {
+public class Perfil {
     private int id;
     private String nome;
-    private String email;
-    private String senha; // Armazena o hash da senha.
+    private String descricao;
 
-    public Usuario(int id, String nome, String email, String senha) {
+    public Perfil(int id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
-        this.email = email;
-        this.senha = senha;
+        this.descricao = descricao;
     }
 
     public int getId() {
@@ -32,20 +30,12 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public byte[] toByteArray() throws Exception {
@@ -53,8 +43,7 @@ public class Usuario {
         DataOutputStream dos = new DataOutputStream(baos);
         dos.writeInt(this.id);
         dos.writeUTF(this.nome);
-        dos.writeUTF(this.email);
-        dos.writeUTF(this.senha); // Usa a senha já hashada
+        dos.writeUTF(this.descricao);
         byte[] dados = baos.toByteArray();
         byte[] dadosCifrados = Cifragem.cifrar(dados); // Usando Cifragem
         return dadosCifrados;
@@ -66,12 +55,11 @@ public class Usuario {
         DataInputStream dis = new DataInputStream(bais);
         this.id = dis.readInt();
         this.nome = dis.readUTF();
-        this.email = dis.readUTF();
-        this.senha = dis.readUTF(); // Carrega a senha hashada
+        this.descricao = dis.readUTF();
     }
 
     @Override
     public String toString() {
-        return "ID: " + id + "\nNome: " + nome + "\nEmail: " + email + "\nSenha: " + senha;
+        return "ID: " + id + "\nNome: " + nome + "\nDescrição: " + descricao;
     }
 }

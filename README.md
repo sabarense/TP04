@@ -4,9 +4,15 @@ Quarto trabalho prático da disciplina de Algoritmos e Estruturas de Dados III
 
 ### 1. Introdução ###
 
-O objetivo desse trabalho é implementar cifração e decifração de entidades. Para isso, foi implementada a classe que contém os métodos `cifrar` e `decifrar` que recebem um array de bytes e retornam um array de bytes cifrado e decifrado, respectivamente. Além disso, foi implementado um método `hashPassword` que retorna o hash da senha e um método `verifyPassword` que verifica se a senha é válida.
+O objetivo desse trabalho é implementar cifração e decifração de entidades. Para isso, foi implementada a classe que contém os métodos `cifrar` e `decifrar`. Além disso, foi implementado um método `hashPassword` que retorna o hash da senha e um método `verifyPassword` que verifica se a senha é válida.
 
-### 2. Classes e Métodos ###
+### 2. Classes ###
+    
+    - Usuario: Representa uma entidade usuário. Possui os atributos `id`, `nome`, `email`, `senha` e `salt`.
+    - Perfil: Representa uma entidade perfil. Possui os atributos `id`,`nome` e `descrição`.
+    - Cifragem: Representa a classe carregada de cifrar e decifrar entidades. Possui os métodos `cifrar`, `decifrar`, `getSalt`, `hashWithSalt`, `hashPassword` e `verifyPassword`.
+
+### 3. Métodos ###
 
     public byte[] toByteArray(): Retorna um array de bytes com os atributos da classe.
 
@@ -24,7 +30,7 @@ O objetivo desse trabalho é implementar cifração e decifração de entidades.
 
     public static boolean verifyPassword(String senha, String senhaArmazenada): Verifica se a senha é válida.
 
-### 3. Checklist ###
+### 4. Checklist ###
 
 - Há uma função de cifragem em todas as classes de entidades, envolvendo pelo menos duas operações diferentes e usando uma chave criptográfica? Sim, a classe `Usuario` possui os métodos `cifrar` e `decifrar` que recebem um array de bytes e retornam um array de bytes cifrado e decifrado, respectivamente.
 - Uma das operações de cifragem é baseada na substituição e a outra na transposição? Sim, a operação de cifragem é baseada na substituição e a operação de decifragem

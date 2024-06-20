@@ -32,7 +32,7 @@ O objetivo desse trabalho é implementar cifração e decifração de entidades.
 
 ### 4. Checklist ###
 
-- Há uma função de cifragem em todas as classes de entidades, envolvendo pelo menos duas operações diferentes e usando uma chave criptográfica? Sim, a classe `Usuario` possui os métodos `cifrar` e `decifrar` que recebem um array de bytes e retornam um array de bytes cifrado e decifrado, respectivamente.
+- Há uma função de cifragem em todas as classes de entidades, envolvendo pelo menos duas operações diferentes e usando uma chave criptográfica? Sim, a classe Cifragem possui os métodos `cifrar` e `decifrar` que envolvem duas operações diferentes e usam uma chave criptográfica.
 - Uma das operações de cifragem é baseada na substituição e a outra na transposição? Sim, a operação de cifragem é baseada na substituição e a operação de decifragem
 - O trabalho está funcionando corretamente? Sim, o trabalho está funcionando corretamente. 
 - O trabalho está completo? Sim, o trabalho está completo.

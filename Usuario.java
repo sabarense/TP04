@@ -136,26 +136,26 @@ public class Usuario {
     }
 
     //hasheia a senha com o sal dado usando SHA-256
-    private static String hashWithSalt(String password, String salt) throws NoSuchAlgorithmException {
+    private static String hashWithSalt(String senha, String salt) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         md.update(salt.getBytes());
-        byte[] hashedBytes = md.digest(password.getBytes());
+        byte[] hashedBytes = md.digest(senha.getBytes());
         return Base64.getEncoder().encodeToString(hashedBytes);
     }
 
 
-    public static String hashPassword(String plainTextPassword) throws NoSuchAlgorithmException {
+    public static String hashPassword(String senha) throws NoSuchAlgorithmException {
         String salt = getSalt();
-        String hashedPassword = hashWithSalt(plainTextPassword, salt);
+        String hashedPassword = hashWithSalt(senha, salt);
         return salt + ":" + hashedPassword;
     }
 
     //verifica uma senha contra uma senha hashada
-    public static boolean verifyPassword(String plainTextPassword, String storedPassword) throws NoSuchAlgorithmException {
-        String[] parts = storedPassword.split(":");
+    public static boolean verifyPassword(String senha, String senhaArmazenada) throws NoSuchAlgorithmException {
+        String[] parts = senhaArmazenada.split(":");
         String salt = parts[0];
         String storedHash = parts[1];
-        String calculatedHash = hashWithSalt(plainTextPassword, salt);
+        String calculatedHash = hashWithSalt(senha, salt);
         return storedHash.equals(calculatedHash);
     }
 

@@ -4,7 +4,7 @@ Quarto trabalho prático da disciplina de Algoritmos e Estruturas de Dados III
 
 ### 1. Introdução ###
 
-O objetivo desse trabalho é implementar cifração e decifração de entidades. Para isso, foi implementada a classe que contém os métodos `cifrar` e `decifrar`. Além disso, foi implementado um método `hashPassword` que retorna o hash da senha e um método `verifyPassword` que verifica se a senha é válida.
+O objetivo deste trabalho é implementar funcionalidades de criptografia e segurança para operações de cifração, decifração e hash de senhas em entidades de um sistema. Para isso, foi desenvolvida a classe Cifragem, que contém métodos para cifrar e decifrar dados, além de implementar técnicas de hash para segurança de senhas. Os métodos cifrar e decifrar permitem a manipulação segura de dados sensíveis, utilizando uma chave padrão ou uma chave fornecida pelo usuário. Adicionalmente, o método hashPassword gera um hash seguro para senhas utilizando um algoritmo SHA-256 combinado com um sal aleatório, enquanto o método verifyPassword verifica a validade de uma senha em relação ao hash armazenado, garantindo a integridade e confidencialidade das informações no sistema.
 
 ### 2. Classes ###
     
